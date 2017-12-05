@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>盈点点科技有限公司</title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="盈点点科技"/>
+
+
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <!--bootStrap-->
+    <link href="../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../plugins/bootstrap/css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--swipe-->
+    <link href="../plugins/Swiper-3.1.0/dist/css/swiper.min.css" rel="stylesheet" type="text/css"/>
+    <script src="../plugins/Swiper-3.1.0/dist/js/swiper.min.js"></script>
+
+    <!--<link href="../css/style.css" rel="stylesheet" type="text/css"/>-->
+    <link href="../css/common.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/index.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="../css/home.css" rel="stylesheet" type="text/css"/>-->
+
+    <script>
+        $(function () {
+
+            var mySwiper = new Swiper('.banner_list', {
+                initialSlide: 1,//设定初始化时slide的索引。
+                direction: 'horizontal',//Slides的滑动方向，可设置水平(horizontal)或垂直(vertical)
+                speed: 300,//滑动速度，即slider自动滑动开始到结束的时间（单位ms）
+//								autoplay: 5000,//自动切换的时间间隔（单位ms），不设定该参数slide不会自动切换。
+                autoplayDisableOnInteraction: false,//用户操作swiper之后，是否禁止autoplay。默认为true：停止。
+                grabCursor: true,//设置为true时，鼠标覆盖Swiper时指针会变成手掌形状，拖动时指针会变成抓手形状。
+                setWrapperSize: true,//开启这个设定会在Wrapper上添加等于slides相加的宽高，在对flexbox布局的支持不是很好的浏览器中可能需要用到。
+                slidesOffsetBefore: 0,//设定slide与左边框的预设偏移量（单位px）。
+                slidesOffsetAfter: 0,//设定slide与右边框的预设偏移量（单位px）。
+                freeMode: false,//默认为false   false：一次滑一个 true：滑到哪里算哪里
+                freeModeSticky: true,//使得freeMode也能自动贴合。 滑动模式下也可以贴合
+                //slidesPerView: 3,//一页 显示的个数
+                effect: 'slide',//slide的切换效果，默认为"slide"（位移切换），"fade"（淡入）"cube"（方块）"coverflow"（3d流）。
+                loop: true,
+                // 如果需要分页器
+                pagination: '.swiper-pagination'
+            });
+
+
+            $(".box1 ul > li").hover(
+                function () {
+                    $(this).find(".s2").show().siblings("img").hide();
+                },
+                function () {
+                    $(this).find(".s1").show().siblings("img").hide();
+                }
+            );
+
+            imgShow();//显示图片
+
+            $(window).scroll(function () {
+                var scrollTop = $(document).scrollTop();
+                var pageHeight = $(window).height();
+
+                if (scrollTop >= pageHeight) {
+                    $(".icon_up").show();
+                }
+                else {
+                    $(".icon_up").hide();
+                }
+            });
+
+        });
+
+        //显示图片
+        var imgShow = function () {
+
+            $(".case_container .case_list .row").each(function () {
+
+                $(this).find(".search_more").click(function () {
+
+                    $(".case_img_show").css("display", "-webkit-box");
+                    var mySwiper1 = new Swiper('.img_list', {
+                        initialSlide: 1,//设定初始化时slide的索引。
+                        direction: 'horizontal',//Slides的滑动方向，可设置水平(horizontal)或垂直(vertical)
+                        speed: 1500,//滑动速度，即slider自动滑动开始到结束的时间（单位ms）
+//												autoplay: 5000,//自动切换的时间间隔（单位ms），不设定该参数slide不会自动切换。
+                        autoplayDisableOnInteraction: false,//用户操作swiper之后，是否禁止autoplay。默认为true：停止。
+                        grabCursor: true,//设置为true时，鼠标覆盖Swiper时指针会变成手掌形状，拖动时指针会变成抓手形状。
+                        setWrapperSize: true,//开启这个设定会在Wrapper上添加等于slides相加的宽高，在对flexbox布局的支持不是很好的浏览器中可能需要用到。
+                        slidesOffsetBefore: 0,//设定slide与左边框的预设偏移量（单位px）。
+                        slidesOffsetAfter: 0,//设定slide与右边框的预设偏移量（单位px）。
+                        freeMode: false,//默认为false   false：一次滑一个 true：滑到哪里算哪里
+                        freeModeSticky: true,//使得freeMode也能自动贴合。 滑动模式下也可以贴合
+                        slidesPerView: 3,//一页 显示的个数
+                        effect: 'coverflow',//slide的切换效果，默认为"slide"（位移切换），
+                        // "fade"（淡入）"cube"（方块）"coverflow"（3d流）。
+                        loop: true
+
+                    });
+                });
+
+            });
+        };
+    </script>
+</head>
+
+<body>
+<!--head开始-->
+<div id="head_top" class="hidden-xs">
+    <div class="head">
+        <div class="head-top-con">
+						<span>全国服务热线
+								<b>400-773-4377</b>
+						</span>
+        </div>
+
+        <div class="logo">
+            <a href="index.html" title="深圳粉果科技APP开发公司">
+                <img src="../image/logo.png"
+                     alt="深圳粉果科技APP开发公司" width="200" height="75"/>
+            </a>
+        </div>
+
+        <div class="navi">
+            <ul>
+                <li class="active"><a href="">网站首页</a></li>
+
+                <li class=""><a href="app.html">APP开发</a></li>
+
+                <li class=""><a href="solution.html">解决方案</a></li>
+
+                <li class=""><a href="case.html">案例展示</a></li>
+
+                <li class=""><a href="news.html">新闻资讯</a></li>
+
+                <li class=""><a href="aboutus.html">关于我们</a></li>
+
+                <li class=""><a href="contact_us.html">联系我们</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div class="icon_head_show visible-xs-block" onclick="$('.head_show').toggle()">
+    <div class="corp_logo">
+        <img src="../image/logo.png">
+    </div>
+
+    <i class="fa fa-bars"></i>
+</div>
+<div class="head_show" onclick="$('.head_show').hide()">
+
+    <div class="block" onclick="event.stopImmediatePropagation();">
+
+        <ul class="head_bar">
+            <li class=""><a href="index.html">网站首页</a></li>
+
+            <li class=""><a href="app.html">APP开发</a></li>
+
+            <li class=""><a href="solution.html">解决方案</a></li>
+
+            <li class=""><a href="case.html">案例展示</a></li>
+
+            <li class=""><a href="news.html">新闻资讯</a></li>
+
+            <li class=""><a href="aboutus.html">关于我们</a></li>
+
+            <li class=""><a href="contact_us.html">联系我们</a></li>
+
+        </ul>
+
+    </div>
+
+</div>
+<!--head结束-->
+
+<!--banner 开始-->
+<div id="banner">
+    <div class="swiper-container banner_list">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <span style='background: url("../image/a11.png") 100% 100%;'>
+                    <img src="../image/a1.png" data-echo=""/>
+                </span>
+            </div>
+            <div class="swiper-slide">
+                <span style="background-color: rgb(241, 152, 24)">
+                    <img src="../image/a2.png"/>
+                </span>
+            </div>
+            <div class="swiper-slide">
+                <span style='background: url("../image/a33.png") 100% 100%;'>
+                    <img src="../image/a3.png"/>
+                </span>
+            </div>
+            <div class="swiper-slide">
+                <span style='background: url("../image/a44.png") 100% 100%;'>
+                    <img src="../image/a4.png"/>
+                </span>
+            </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<!--banner结束-->
+
+<!--app设计 开始-->
+<div class="app_design_container width_container">
+
+    <div class="t1_pic">
+        <a href="app.html">
+            <img src="../image/t1.png"
+                 alt="深圳粉果科技提供APP开发,手机APP软件外包服务,助力中小企业升级转型."/>
+        </a>
+    </div>
+
+    <div class="t1"> 为全国领先的高新技术企业提供一站式的手机APP开发服务</div>
+    <div class="t1_p">
+        粉果科技主要是以互联网和手机为载体，开发一系列互联网产品和手机应用产品。
+        专注于高端APP定制开发，助力中小企业转型升级，以市场反馈为检验产品的唯一标准。
+    </div>
+
+    <div class="box1">
+        <div class="mainer">
+
+            <ul class="flow col-xs-12">
+
+                <li class="col-xs-12 col-md-1_5">
+                    <!--<div class="icon"></div>-->
+                    <img src="../image/s21.png" class="s1" alt="安卓APP开发"/>
+                    <img src="../image/s22.png" class="s2" alt="安卓APP开发"/>
+                    <div class="th3">
+                        安卓APP开发
+                    </div>
+                </li>
+
+                <li class="col-xs-12 col-md-1_5">
+                    <img src="../image/s31.png" class="s1" alt="苹果APP开发"/>
+                    <img src="../image/s32.png" class="s2" alt="苹果APP开发"/>
+                    <div class="th3">
+                        苹果APP开发
+                    </div>
+                </li>
+
+                <li class="col-xs-12 col-md-1_5">
+                    <img src="../image/s41.png" class="s1" alt="微信二次开发"/>
+                    <img src="../image/s42.png" class="s2" alt="微信二次开发"/>
+                    <div class="th3">
+                        微信二次开发
+                    </div>
+                </li>
+
+                <li class="col-xs-12 col-md-1_5">
+                    <img src="../image/s51.png" class="s1" alt="HTML5网站开发"/>
+                    <img src="../image/s52.png" class="s2" alt="HTML5网站开发"/>
+                    <div class="th3">
+                        HTML5网站开发
+                    </div>
+                </li>
+
+                <li class="col-xs-12 col-md-1_5">
+                    <img src="../image/s61.png" class="s1" alt="手机站开发"/>
+                    <img src="../image/s62.png" class="s2" alt="手机站开发"/>
+                    <div class="th3">
+                        手机站开发
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+<!--app设计 结束-->
+
+<!--我们的优势 开始-->
+<div class="advantage_container width_container">
+
+    <div class="t1_pic">
+        <img src="../image/t2.png" width="382" height="122"
+             alt="深圳粉果科技专注APP开发,5年开发经验,技术架构健壮,
+				 为企业提供企业APP量身设计定制,全程可视化监控."/>
+    </div>
+
+    <div class="box1">
+        <div class="mainer">
+
+            <ul class="flow col-xs-12">
+
+                <li class="col-xs-12 col-md-1_5">
+                    <img src="../image/j1.png" class="s1" alt="专注APP开发"/>
+                    <img src="../image/j11.png" class="s2" alt="专注APP开发"/>
+                    <div class="th3">专注APP开发</div>
+                </li>
+
+                <li class="col-xs-12 col-md-1_5">
+                    <img src="../image/j2.png" class="s1" alt="5年开发经验"/>
+                    <img src="../image/j22.png" class="s2" alt="5年开发经验"/>
+                    <div class="th3">5年开发经验</div>
+                </li>
+
+                <li class="col-xs-12 col-md-1_5">
+                    <img src="../image/j3.png" class="s1" alt="量身设计定制"/>
+                    <img src="../image/j33.png" class="s2" alt="量身设计定制"/>
+                    <div class="th3">量身设计定制</div>
+                </li>
+
+                <li class="col-xs-12 col-md-1_5">
+                    <img src="../image/j4.png" class="s1" alt="技术架构健壮"/>
+                    <img src="../image/j44.png" class="s2" alt="技术架构健壮"/>
+                    <div class="th3">技术架构健壮</div>
+                </li>
+
+                <li class="col-xs-12 col-md-1_5">
+                    <img src="../image/j5.png" class="s1" alt="全程可视化监控"/>
+                    <img src="../image/j55.png" class="s2" alt="全程可视化监控"/>
+                    <div class="th3">全程可视化监控</div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+<!--我们的优势 结束-->
+
+<!--solution start-->
+<div class="t1_pic" style="background-color: #f9f9f9;">
+    <img src="../image/t_fa.png" width="382" height="122">
+</div>
+<div class="solution_container width_container">
+
+    <div class="jj_p">
+        粉果科技主要是以互联网和手机为载体，通过开发一系列互联网产品为顾客提供社交行业、
+        电商行业、金融行业、餐饮行业、教育行业、医疗行业等APP开发解决方案等，
+        是国内知名的行业APP开发公司。
+    </div>
+
+    <div class="col-xs-12" style="margin-bottom: 40px;">
+
+        <div class="jjfa row">
+
+            <div class="list col-xs-12 col-md-4">
+
+                <div class="tbj1">
+                    <a href="javascript:;" title="社交行业app开发">
+                        <img src="../image/jjfa-1.png" width="120" height="120"
+                             alt="社交行业app开发">
+                    </a>
+                </div>
+
+                <div class="title">
+                    <a href="javascript:;" title="社交行业app开发">社交行业</a>
+                </div>
+
+                <div class="jieshao">
+                    指用户以手机、平板等移动终端为载体<br>
+                    以在线识别用户及交换信息技术为基础<br>
+                </div>
+
+            </div>
+
+            <div class="list col-xs-12 col-md-4">
+
+                <div class="tbj2">
+                    <a href="javascript:;" title="电商行业APP开发">
+                        <img src="../image/jjfa-2.png" width="120" height="120"
+                             alt="电商行业APP开发">
+                    </a>
+                </div>
+
+                <div class="title">
+                    <a href="javascript:;" title="电商行业APP开发">电商行业</a>
+                </div>
+
+                <div class="jieshao">
+                    基于移动端实现消费者的网上购物<br>
+                    网上交易和在线电子支付的新型商业模式<br>
+                </div>
+
+            </div>
+
+            <div class="list col-xs-12 col-md-4">
+                <div class="tbj3">
+                    <a href="javascript:;" title="金融行业APP开发">
+                        <img src="../image/jjfa-3.png" width="120" height="120"
+                             alt="金融行业APP开发">
+                    </a>
+                </div>
+
+                <div class="title">
+                    <a href="javascript:;" title="金融行业APP开发">金融行业</a>
+                </div>
+
+                <div class="jieshao">
+                    专注于金融方面的理财在线手机交易软件<br>
+                    理财项目有涵盖股票、外汇、P2P、基金等金融<br>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="jjfa row">
+
+            <div class="list col-xs-12 col-md-4">
+
+                <div class="tbj1">
+                    <a href="javascript:;" title="社交行业app开发">
+                        <img src="../image/jjfa-4.png" width="120" height="120"
+                             alt="社交行业app开发">
+                    </a>
+                </div>
+
+                <div class="title">
+                    <a href="javascript:;" title="社交行业app开发">教育行业</a>
+                </div>
+
+                <div class="jieshao">
+                    指用户以手机、平板等移动终端为载体<br>
+                    以在线识别用户及交换信息技术为基础<br>
+                </div>
+
+            </div>
+
+            <div class="list col-xs-12 col-md-4">
+
+                <div class="tbj2">
+                    <a href="javascript:;" title="电商行业APP开发">
+                        <img src="../image/jjfa-5.png" width="120" height="120"
+                             alt="电商行业APP开发">
+                    </a>
+                </div>
+
+                <div class="title">
+                    <a href="javascript:;" title="电商行业APP开发">餐饮行业</a>
+                </div>
+
+                <div class="jieshao">
+                    基于移动端实现消费者的网上购物<br>
+                    网上交易和在线电子支付的新型商业模式<br>
+                </div>
+
+            </div>
+
+            <div class="list col-xs-12 col-md-4">
+                <div class="tbj3">
+                    <a href="javascript:;" title="金融行业APP开发">
+                        <img src="../image/jjfa-6.png" width="120" height="120"
+                             alt="金融行业APP开发">
+                    </a>
+                </div>
+
+                <div class="title">
+                    <a href="javascript:;" title="金融行业APP开发">医疗行业</a>
+                </div>
+
+                <div class="jieshao">
+                    专注于金融方面的理财在线手机交易软件<br>
+                    理财项目有涵盖股票、外汇、P2P、基金等金融<br>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+<!--solution end-->
+
+<!--case-->
+<div class="t1_pic" style="background-color: #0e9bdc;">
+    <a href="case.html">
+        <img src="../image/t3.png" width="382" height="122"
+             alt="APP软件开发,深圳粉果科技提供最全行业APP开发案例参考"/>
+    </a>
+</div>
+<div class="case_container width_container">
+
+    <div class="case_list">
+
+        <div class="row">
+
+            <dl class="col-xs-12 col-md-4">
+
+                <dt>
+                    <a>
+                        <img src="http://www.ifenguo.com/uploads/161111/3-1611111F44NJ.jpg">
+                    </a>
+                </dt>
+
+                <dd>
+                    <p>快鱼直播，APP软件案例分</p>
+                    <a class="search_more">+</a>
+                </dd>
+
+            </dl>
+
+            <dl class="col-xs-12 col-md-4">
+
+                <dt>
+                    <a>
+                        <img src="http://www.ifenguo.com/uploads/161111/3-1611111F44NJ.jpg">
+                    </a>
+                </dt>
+
+                <dd>
+                    <p>快鱼直播，APP软件案例分</p>
+                    <a class="search_more">+</a>
+                </dd>
+
+            </dl>
+
+            <dl class="col-xs-12 col-md-4">
+
+                <dt>
+                    <a>
+                        <img src="http://www.ifenguo.com/uploads/161111/3-1611111F44NJ.jpg">
+                    </a>
+                </dt>
+
+                <dd>
+                    <p>快鱼直播，APP软件案例分</p>
+                    <a class="search_more">+</a>
+                </dd>
+
+            </dl>
+
+            <dl class="col-xs-12 col-md-4">
+
+                <dt>
+                    <a>
+                        <img src="http://www.ifenguo.com/uploads/161111/3-1611111F44NJ.jpg">
+                    </a>
+                </dt>
+
+                <dd>
+                    <p>快鱼直播，APP软件案例分</p>
+                    <a class="search_more">+</a>
+                </dd>
+
+            </dl>
+
+            <dl class="col-xs-12 col-md-4">
+
+                <dt>
+                    <a>
+                        <img src="http://www.ifenguo.com/uploads/161111/3-1611111F44NJ.jpg">
+                    </a>
+                </dt>
+
+                <dd>
+                    <p>快鱼直播，APP软件案例分</p>
+                    <a class="search_more">+</a>
+                </dd>
+
+            </dl>
+
+            <dl class="col-xs-12 col-md-4">
+
+                <dt>
+                    <a>
+                        <img src="http://www.ifenguo.com/uploads/161111/3-1611111F44NJ.jpg">
+                    </a>
+                </dt>
+
+                <dd>
+                    <p>快鱼直播，APP软件案例分</p>
+                    <a class="search_more">+</a>
+                </dd>
+
+            </dl>
+
+            <dl class="col-xs-12 col-md-4">
+
+                <dt>
+                    <a>
+                        <img src="http://www.ifenguo.com/uploads/161111/3-1611111F44NJ.jpg">
+                    </a>
+                </dt>
+
+                <dd>
+                    <p>快鱼直播，APP软件案例分</p>
+                    <a class="search_more">+</a>
+                </dd>
+
+            </dl>
+
+            <dl class="col-xs-12 col-md-4">
+
+                <dt>
+                    <a>
+                        <img src="http://www.ifenguo.com/uploads/161111/3-1611111F44NJ.jpg">
+                    </a>
+                </dt>
+
+                <dd>
+                    <p>快鱼直播，APP软件案例分</p>
+                    <a class="search_more">+</a>
+                </dd>
+
+            </dl>
+
+            <dl class="col-xs-12 col-md-4">
+
+                <dt>
+                    <a>
+                        <img src="http://www.ifenguo.com/uploads/161111/3-1611111F44NJ.jpg">
+                    </a>
+                </dt>
+
+                <dd>
+                    <p>快鱼直播，APP软件案例分</p>
+                    <a class="search_more">+</a>
+                </dd>
+
+            </dl>
+
+        </div>
+
+    </div>
+
+    <div class="case_more">
+        <a href="case.html" target="_blank">
+            <img src="../image/case_more.png">
+        </a>
+    </div>
+
+</div>
+<!--case-->
+
+<!--about-->
+<div class="about_us_container" style="background-color: #f9f9f9;">
+
+    <div class="t1_pic">
+        <a href="http://www.ifenguo.com/about/">
+            <img src="../image/about.png" width="382" height="102"
+                 alt="深圳粉果科技专业APP开发团队,深圳APP开发首选外包公司"/>
+        </a>
+    </div>
+
+    <div class="js">
+        深圳粉果科技有限公司创立于2011年，隶属广州紫鲸互联旗下品牌企业，
+        专注于高端APP定制开发和网站建设服务。技术起家，更懂得用户的需求，
+        致力于为企业提供全面、系统的APP开发制作方案。在APP开发的原型创意设计、
+        技术研发领域具有远超同行的水平，健壮的技术框架和全程可视化监控，
+        保证了开发进程的稳定性和流程性，确保了您的项目完满落地。
+    </div>
+
+    <div class="tit2">理念</div>
+    <div class="tit3">比您更懂您，比挑剔更挑剔</div>
+    <div class="tit4">人的体型成千上万种，APP开发更应量身定制</div>
+
+    <div class="tel">全国免费咨询热线：400-9980-863</div>
+
+</div>
+<!--about-->
+
+<!--news-->
+<div class="news_container width_container">
+
+    <div class="t1_pic">
+        <a href="http://www.ifenguo.com/news/">
+            <img src="../image/t4.png" width="382" height="122" alt="APP开发新闻资讯及APP外包常见问题"/>
+        </a>
+    </div>
+
+
+    <div class="row">
+
+        <div class="news_box  col-xs-12 col-md-6">
+
+            <div class="row">
+
+                <div class="news_title">
+                    <a href="">公司新闻</a>
+                </div>
+
+                <span class="news_more">
+										<a href="/">
+												更多
+										</a>
+								</span>
+
+            </div>
+
+            <div class="row col-xs-12">
+
+                <a class="news_img col-xs-3" title="微信小程序半夜开放公测">
+                    <img src="http://www.ifenguo.com/uploads/allimg/161107/5-16110F9312N33-lp.jpg"/>
+                </a>
+
+                <div class="news_info col-xs-9">
+
+                    <a class="news_head">
+                        <b class="ns_b">微信小程序半夜开放公测</b>
+                    </a>
+
+                    <a class="news_content">
+                        众所周知，自从9月份微信开始内测小程序一事件后，行业内的开发APP应用等...
+                    </a>
+
+                    <div class="news_time">
+                        11-01
+                    </div>
+
+                </div>
+
+            </div>
+
+            <ul>
+
+                <li>
+                    <span>11-06 </span>
+
+                    <div>
+                        <a href="http://www.ifenguo.com/news/gongsixinwen/867.html"
+                           title="深圳APP开发公司推荐:活动就用场地租">
+                            深圳APP开发公司推荐:活动就用场地租
+                        </a>
+                    </div>
+                </li>
+
+                <li>
+                    <span>11-06 </span>
+
+                    <div>
+                        <a href="http://www.ifenguo.com/news/gongsixinwen/867.html"
+                           title="深圳APP开发公司推荐:活动就用场地租">
+                            深圳APP开发公司推荐:活动就用场地租
+                        </a>
+                    </div>
+                </li>
+
+                <li>
+                    <span>11-06 </span>
+
+                    <div>
+                        <a href="http://www.ifenguo.com/news/gongsixinwen/867.html"
+                           title="深圳APP开发公司推荐:活动就用场地租">
+                            深圳APP开发公司推荐:活动就用场地租
+                        </a>
+                    </div>
+                </li>
+
+                <li>
+                    <span>11-06 </span>
+
+                    <div>
+                        <a href="http://www.ifenguo.com/news/gongsixinwen/867.html"
+                           title="深圳APP开发公司推荐:活动就用场地租">
+                            深圳APP开发公司推荐:活动就用场地租
+                        </a>
+                    </div>
+                </li>
+
+                <li>
+                    <span>11-06 </span>
+
+                    <div>
+                        <a href="http://www.ifenguo.com/news/gongsixinwen/867.html"
+                           title="深圳APP开发公司推荐:活动就用场地租">
+                            深圳APP开发公司推荐:活动就用场地租
+                        </a>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="news_box  col-xs-12 col-md-6">
+
+            <div class="row">
+
+                <h3 class="news_title">
+                    <a href="/">公司新闻</a>
+                </h3>
+
+                <span class="news_more">
+										<a href="/">
+												更多
+										</a>
+								</span>
+
+            </div>
+
+            <div class="row col-xs-12">
+
+                <a class="news_img col-xs-3" title="微信小程序半夜开放公测">
+                    <img src="http://www.ifenguo.com/uploads/allimg/161107/5-16110F9312N33-lp.jpg"/>
+                </a>
+
+                <div class="news_info col-xs-9">
+
+                    <a class="news_head">
+                        <b class="ns_b">微信小程序半夜开放公测</b>
+                    </a>
+
+                    <a class="news_content">
+                        众所周知，自从9月份微信开始内测小程序一事件后，行业内的开发APP应用等...
+                    </a>
+
+                    <div class="news_time">
+                        11-01
+                    </div>
+
+                </div>
+
+            </div>
+
+            <ul>
+
+                <li>
+                    <span>11-06 </span>
+
+                    <div>
+                        <a href="http://www.ifenguo.com/news/gongsixinwen/867.html"
+                           title="深圳APP开发公司推荐:活动就用场地租">
+                            深圳APP开发公司推荐:活动就用场地租
+                        </a>
+                    </div>
+                </li>
+
+                <li>
+                    <span>11-06 </span>
+
+                    <div>
+                        <a href="http://www.ifenguo.com/news/gongsixinwen/867.html"
+                           title="深圳APP开发公司推荐:活动就用场地租">
+                            深圳APP开发公司推荐:活动就用场地租
+                        </a>
+                    </div>
+                </li>
+
+                <li>
+                    <span>11-06 </span>
+
+                    <div>
+                        <a href="http://www.ifenguo.com/news/gongsixinwen/867.html"
+                           title="深圳APP开发公司推荐:活动就用场地租">
+                            深圳APP开发公司推荐:活动就用场地租
+                        </a>
+                    </div>
+                </li>
+
+                <li>
+                    <span>11-06 </span>
+
+                    <div>
+                        <a href="http://www.ifenguo.com/news/gongsixinwen/867.html"
+                           title="深圳APP开发公司推荐:活动就用场地租">
+                            深圳APP开发公司推荐:活动就用场地租
+                        </a>
+                    </div>
+                </li>
+
+                <li>
+                    <span>11-06 </span>
+
+                    <div>
+                        <a href="http://www.ifenguo.com/news/gongsixinwen/867.html"
+                           title="深圳APP开发公司推荐:活动就用场地租">
+                            深圳APP开发公司推荐:活动就用场地租
+                        </a>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+<!--news-->
+
+<!-- 在线留言 -->
+<div class="copy">
+
+    <div class="box col-xs-12">
+
+        <div class="left col-xs-12 col-md-8">
+
+            <div class="col-xs-2 col-md-1">
+                <div class="txt">在线留言</div>
+            </div>
+
+            <div class="col-xs-10 col-md-11 input_info">
+
+                <div class="row">
+
+                    <div class="col-xs-6">
+                        <input type="text" class="form-control user_name" placeholder="您的姓名"/>
+                        <font color="red">*</font>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <input type="text" class="form-control corp_name" placeholder="单位名称"/>
+                        <font color="red">*</font>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-6">
+                        <input type="text" class="form-control user_email" placeholder="E-mail"/>
+                        <font color="red">*</font>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <input type="text" class="form-control user_phone" placeholder="联系电话"/>
+                        <font color="red">*</font>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <textarea rows="" cols="" class="form-control remark" placeholder="留言内容"></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-12">
+
+                        <div class="col-xs-3 btn btn-success btn_submit">提交</div>
+
+                        <span class="col-xs-9 txt1 hidden-xs">
+														我们会尽快回复您，您的资料会被保密处理。
+												</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="right col-md-4 hidden-xs">
+
+            <div class="col-xs-6 item">
+
+                <div class="name">
+                    客服热线
+                </div>
+
+                <div class="img">
+                    <img src="../image/weixin.gif" border="0"/>
+                </div>
+
+                <div class="txt">
+                    028-123343324
+                </div>
+
+            </div>
+
+            <div class="col-xs-6 item">
+
+                <div class="name">
+                    客服热线
+                </div>
+
+                <div class="img">
+                    <img src="../image/weixin.gif" border="0"/>
+                </div>
+
+                <div class="txt">
+                    028-123343324
+                </div>
+
+            </div>
+
+            <div class="col-xs-6 item">
+
+                <div class="name">
+                    客服热线
+                </div>
+
+                <div class="img">
+                    <img src="../image/weixin.gif" border="0"/>
+                </div>
+
+                <div class="txt">
+                    028-123343324
+                </div>
+
+            </div>
+
+            <div class="col-xs-6 item">
+
+                <div class="name">
+                    客服热线
+                </div>
+
+                <div class="img">
+                    <img src="../image/weixin.gif" border="0"/>
+                </div>
+
+                <div class="txt">
+                    028-123343324
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-xs-12 show_txt" style="margin-top: 30px">
+
+        客服：0512-88888888
+        任先生：11111111111
+        地址：苏州腾飞创业园
+
+    </div>
+
+    <div class="col-xs-12 show_txt">
+
+        Copyright &copy; 2011-2016 深圳粉果科技有限公司 版权所有
+        粤ICP备16007687号-1
+
+    </div>
+
+</div>
+<!-- 在线留言 结束 -->
+
+<div class="icon_up" onclick="window.scrollTo(0,0)"></div>
+
+
+<div class="case_img_show" onclick="$('.case_img_show').hide()">
+
+    <div class="swiper-container img_list" onclick="event.stopImmediatePropagation()">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <span style='background: url("../image/a11.png") 100% 100%;'>
+                    <img src="../image/a1.png"/>
+                </span>
+            </div>
+            <div class="swiper-slide">
+                <span style="background-color: rgb(241, 152, 24)">
+                    <img src="../image/a2.png"/>
+                </span>
+            </div>
+            <div class="swiper-slide">
+                <span style='background: url("../image/a33.png") 100% 100%;'>
+                    <img src="../image/a3.png"/>
+                </span>
+            </div>
+            <div class="swiper-slide">
+                <span style='background: url("../image/a44.png") 100% 100%;'>
+                    <img src="../image/a4.png"/>
+                </span>
+            </div>
+            <div class="swiper-slide">
+                <span style="background-color: rgb(241, 152, 24)">
+                    <img src="../image/a2.png"/>
+                </span>
+            </div>
+            <div class="swiper-slide">
+                <span style='background: url("../image/a33.png") 100% 100%;'>
+                    <img src="../image/a3.png"/>
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

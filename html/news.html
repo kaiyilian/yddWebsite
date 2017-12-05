@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+		<title>新闻资讯</title>
+		<meta name="description" content=""/>
+		<meta name="keywords" content=""/>
+		<meta name="author" content="盈点点科技"/>
+
+		<script src="../js/jquery-2.1.1.min.js"></script>
+		<!--bootStrap-->
+		<link href="../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		<link href="../plugins/bootstrap/css/font-awesome.min.css" rel="stylesheet"/>
+		<script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../plugins/bootstrap/js/bootstrap-paginator.min.js"></script>
+
+		<link href="../css/common.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/news.css" rel="stylesheet" type="text/css"/>
+
+		<script>
+				$(function () {
+						pageInit();
+						news_detail();
+						initBanner();
+						initCategory();
+				});
+
+				//分页
+				var pageInit = function () {
+						var options = {
+								bootstrapMajorVersion: 3, //版本  3是ul  2 是div
+								//containerClass:"sdfsaf",
+								//size: "small",//大小
+								alignment: "left",//对齐方式
+								currentPage: 1, //当前页数
+								totalPages: 10, //总页数
+								numberOfPages: 5,//每页显示的 页数
+								useBootstrapTooltip: true,//是否使用 bootstrap 自带的提示框
+								itemContainerClass: function (type, page, currentpage) {  //每项的类名
+										//alert(type + "  " + page + "  " + currentpage)
+										var classname = "p_item ";
+
+										switch (type) {
+												case "first":
+														classname += "p_first";
+														break;
+												case "last":
+														classname += "p_last";
+														break;
+												case "prev":
+														classname += "p_prev";
+														break;
+												case "next":
+														classname += "p_next";
+														break;
+												case "page":
+														classname += "p_page";
+														break;
+										}
+
+										if (page == currentpage) {
+												classname += " active "
+										}
+
+										return classname;
+								},
+								itemTexts: function (type, page, current) {  //
+										switch (type) {
+												case "first":
+														return "首页";
+												case "prev":
+														return "上一页";
+												case "next":
+														return "下一页";
+												case "last":
+														return "末页";
+												case "page":
+														return page;
+										}
+								},
+								tooltipTitles: function (type, page, current) {
+										switch (type) {
+												case "first":
+														return "去首页";
+												case "prev":
+														return "上一页";
+												case "next":
+														return "下一页";
+												case "last":
+														return "去末页";
+												case "page":
+														return page === current ? "当前页数 " + page : "前往第 " + page + " 页"
+										}
+								},
+								onPageClicked: function (event, originalEvent, type, page) { //点击事件
+										//alert(page)
+
+										var currentTarget = $(event.currentTarget);
+
+
+								}
+						};
+
+						var ul = "<ul class='pagenation'></ul>";
+						$(".news_pages").show().html(ul);
+						$(".news_pages").find(".pagenation").bootstrapPaginator(options);
+
+				};
+
+				//新闻详情
+				var news_detail = function () {
+						$(".news_list > .news_item").click(function () {
+								location.href = "news_detail.html";
+						});
+				};
+
+				//banner 初始化
+				var initBanner = function () {
+						var height = $(window).width() * 1 / 4;
+						$(".banner").height(height);
+				};
+
+				//选择 分类
+				var initCategory = function () {
+						$(".news_category > a").each(function () {
+								$(this).click(function () {
+										$(this).addClass("selected").siblings().removeClass("selected");
+								});
+						});
+				};
+
+		</script>
+
+</head>
+<body>
+
+<!--head开始-->
+<div id="head_top" class="hidden-xs">
+		<div class="head">
+				<div class="head-top-con">
+						<span>全国服务热线
+								<b>400-773-4377</b>
+						</span>
+				</div>
+
+				<div class="logo">
+						<a href="index.html" title="深圳粉果科技APP开发公司">
+								<img src="../image/logo.png"
+										 alt="深圳粉果科技APP开发公司" width="200" height="75"/>
+						</a>
+				</div>
+
+				<div class="navi">
+						<ul>
+								<li class=""><a href="index.html">网站首页</a></li>
+
+								<li class=""><a href="app.html">APP开发</a></li>
+
+								<li class=""><a href="solution.html">解决方案</a></li>
+
+								<li class=""><a href="case.html">案例展示</a></li>
+
+								<li class="active"><a href="news.html">新闻资讯</a></li>
+
+								<li class=""><a href="aboutus.html">关于我们</a></li>
+
+								<li class=""><a href="contact_us.html">联系我们</a></li>
+
+						</ul>
+				</div>
+		</div>
+
+</div>
+<div class="icon_head_show visible-xs-block" onclick="$('.head_show').toggle()">
+		<div class="corp_logo">
+				<img src="../image/logo.png">
+		</div>
+
+		<i class="fa fa-bars"></i>
+</div>
+<div class="head_show" onclick="$('.head_show').hide()">
+
+		<div class="block" onclick="event.stopImmediatePropagation();">
+
+				<ul class="head_bar">
+						<li class=""><a href="index.html">网站首页</a></li>
+
+						<li class=""><a href="app.html">APP开发</a></li>
+
+						<li class=""><a href="solution.html">解决方案</a></li>
+
+						<li class=""><a href="case.html">案例展示</a></li>
+
+						<li class=""><a href="news.html">新闻资讯</a></li>
+
+						<li class=""><a href="aboutus.html">关于我们</a></li>
+
+						<li class=""><a href="contact_us.html">联系我们</a></li>
+
+				</ul>
+
+		</div>
+
+</div>
+<!--head结束-->
+
+<!--banner图片-->
+<div class="banner">
+		<img src="../image/news/news.png" alt="APP产品技术分享,APP交流学习平台" border="0">
+</div>
+
+<!--新闻内容-->
+<div class="hb_inf">
+
+		<div class="hb_dw">
+
+				<div class="hb_dw_1 news_category">
+						<a class="btn btn-default selected" title="全部资讯">全部资讯</a>
+						<a class="btn btn-default" title="公司新闻">公司新闻</a>
+						<a class="btn btn-default" title="行业动态">行业动态</a>
+						<a class="btn btn-default" title="常见问题">常见问题</a>
+				</div>
+
+				<div class="hb_dw_2 col-xs-12">
+
+						<div class="hb_ct col-xs-12 col-md-8">
+
+								<div class="news_list">
+
+										<div class="row news_item">
+
+												<div class="hb_ct_1">
+
+														<div class="news_title col-xs-8 col-md-10">
+																<a title="社区APP开发打破传统，助居民开启智能化生活">
+																		社区APP开发打破传统，助居民开启智能化生活
+																</a>
+														</div>
+
+														<em class="col-xs-4 col-md-2">2016-11-17 </em>
+
+												</div>
+
+												<div class="hb_ct_2 row news_info">
+
+														<div class="col-xs-12 col-md-4">
+																<a>
+																		<img src="http://www.ifenguo.com/uploads/allimg/161117/6-16111GH155253-lp.jpg"
+																				 alt="社区APP开发打破传统，助居民开启智能化生活">
+																</a>
+														</div>
+
+														<div class="hb_y col-xs-12 col-md-8 news_intro">
+																<a>
+																		社区APP开发，是一款让社区服务更加便捷、更加人性化的手机APP软件。
+																		用户只需下载社区APP客户端，就可以通过互联网功能便利化生活，
+																		比如网上订餐，网上购买水果，在线缴纳物业费...【阅读全文】
+																</a>
+														</div>
+
+												</div>
+
+										</div>
+
+										<div class="row news_item">
+
+												<div class="hb_ct_1">
+
+														<div class="news_title col-xs-8 col-md-10">
+																<a title="社区APP开发打破传统，助居民开启智能化生活">
+																		社区APP开发打破传统，助居民开启智能化生活
+																</a>
+														</div>
+
+														<em class="col-xs-4 col-md-2">2016-11-17 </em>
+
+												</div>
+
+												<div class="hb_ct_2 row news_info">
+
+														<div class="col-xs-12 col-md-4">
+																<a>
+																		<img src="http://www.ifenguo.com/uploads/allimg/161117/6-16111GH155253-lp.jpg"
+																				 alt="社区APP开发打破传统，助居民开启智能化生活">
+																</a>
+														</div>
+
+														<div class="hb_y col-xs-12 col-md-8 news_intro">
+																<a>
+																		社区APP开发，是一款让社区服务更加便捷、更加人性化的手机APP软件。
+																		用户只需下载社区APP客户端，就可以通过互联网功能便利化生活，
+																		比如网上订餐，网上购买水果，在线缴纳物业费...【阅读全文】
+																</a>
+														</div>
+
+												</div>
+
+										</div>
+
+										<div class="row news_item">
+
+												<div class="hb_ct_1">
+
+														<div class="news_title col-xs-8 col-md-10">
+																<a title="社区APP开发打破传统，助居民开启智能化生活">
+																		社区APP开发打破传统，助居民开启智能化生活
+																</a>
+														</div>
+
+														<em class="col-xs-4 col-md-2">2016-11-17 </em>
+
+												</div>
+
+												<div class="hb_ct_2 row news_info">
+
+														<div class="col-xs-12 col-md-4">
+																<a>
+																		<img src="http://www.ifenguo.com/uploads/allimg/161117/6-16111GH155253-lp.jpg"
+																				 alt="社区APP开发打破传统，助居民开启智能化生活">
+																</a>
+														</div>
+
+														<div class="hb_y col-xs-12 col-md-8 news_intro">
+																<a>
+																		社区APP开发，是一款让社区服务更加便捷、更加人性化的手机APP软件。
+																		用户只需下载社区APP客户端，就可以通过互联网功能便利化生活，
+																		比如网上订餐，网上购买水果，在线缴纳物业费...【阅读全文】
+																</a>
+														</div>
+
+												</div>
+
+										</div>
+
+										<div class="row news_item">
+
+												<div class="hb_ct_1">
+
+														<div class="news_title col-xs-8 col-md-10">
+																<a title="社区APP开发打破传统，助居民开启智能化生活">
+																		社区APP开发打破传统，助居民开启智能化生活
+																</a>
+														</div>
+
+														<em class="col-xs-4 col-md-2">2016-11-17 </em>
+
+												</div>
+
+												<div class="hb_ct_2 row news_info">
+
+														<div class="col-xs-12 col-md-4">
+																<a>
+																		<img src="http://www.ifenguo.com/uploads/allimg/161117/6-16111GH155253-lp.jpg"
+																				 alt="社区APP开发打破传统，助居民开启智能化生活">
+																</a>
+														</div>
+
+														<div class="hb_y col-xs-12 col-md-8 news_intro">
+																<a>
+																		社区APP开发，是一款让社区服务更加便捷、更加人性化的手机APP软件。
+																		用户只需下载社区APP客户端，就可以通过互联网功能便利化生活，
+																		比如网上订餐，网上购买水果，在线缴纳物业费...【阅读全文】
+																</a>
+														</div>
+
+												</div>
+
+										</div>
+
+										<div class="row news_item">
+
+												<div class="hb_ct_1">
+
+														<div class="news_title col-xs-8 col-md-10">
+																<a title="社区APP开发打破传统，助居民开启智能化生活">
+																		社区APP开发打破传统，助居民开启智能化生活
+																</a>
+														</div>
+
+														<em class="col-xs-4 col-md-2">2016-11-17 </em>
+
+												</div>
+
+												<div class="hb_ct_2 row news_info">
+
+														<div class="col-xs-12 col-md-4">
+																<a>
+																		<img src="http://www.ifenguo.com/uploads/allimg/161117/6-16111GH155253-lp.jpg"
+																				 alt="社区APP开发打破传统，助居民开启智能化生活">
+																</a>
+														</div>
+
+														<div class="hb_y col-xs-12 col-md-8 news_intro">
+																<a>
+																		社区APP开发，是一款让社区服务更加便捷、更加人性化的手机APP软件。
+																		用户只需下载社区APP客户端，就可以通过互联网功能便利化生活，
+																		比如网上订餐，网上购买水果，在线缴纳物业费...【阅读全文】
+																</a>
+														</div>
+
+												</div>
+
+										</div>
+
+										<div class="row news_item">
+
+												<div class="hb_ct_1">
+
+														<div class="news_title col-xs-8 col-md-10">
+																<a title="社区APP开发打破传统，助居民开启智能化生活">
+																		社区APP开发打破传统，助居民开启智能化生活
+																</a>
+														</div>
+
+														<em class="col-xs-4 col-md-2">2016-11-17 </em>
+
+												</div>
+
+												<div class="hb_ct_2 row news_info">
+
+														<div class="col-xs-12 col-md-4">
+																<a>
+																		<img src="http://www.ifenguo.com/uploads/allimg/161117/6-16111GH155253-lp.jpg"
+																				 alt="社区APP开发打破传统，助居民开启智能化生活">
+																</a>
+														</div>
+
+														<div class="hb_y col-xs-12 col-md-8 news_intro">
+																<a>
+																		社区APP开发，是一款让社区服务更加便捷、更加人性化的手机APP软件。
+																		用户只需下载社区APP客户端，就可以通过互联网功能便利化生活，
+																		比如网上订餐，网上购买水果，在线缴纳物业费...【阅读全文】
+																</a>
+														</div>
+
+												</div>
+
+										</div>
+
+										<div class="row news_item">
+
+												<div class="hb_ct_1">
+
+														<div class="news_title col-xs-8 col-md-10">
+																<a title="社区APP开发打破传统，助居民开启智能化生活">
+																		社区APP开发打破传统，助居民开启智能化生活
+																</a>
+														</div>
+
+														<em class="col-xs-4 col-md-2">2016-11-17 </em>
+
+												</div>
+
+												<div class="hb_ct_2 row news_info">
+
+														<div class="col-xs-12 col-md-4">
+																<a>
+																		<img src="http://www.ifenguo.com/uploads/allimg/161117/6-16111GH155253-lp.jpg"
+																				 alt="社区APP开发打破传统，助居民开启智能化生活">
+																</a>
+														</div>
+
+														<div class="hb_y col-xs-12 col-md-8 news_intro">
+																<a>
+																		社区APP开发，是一款让社区服务更加便捷、更加人性化的手机APP软件。
+																		用户只需下载社区APP客户端，就可以通过互联网功能便利化生活，
+																		比如网上订餐，网上购买水果，在线缴纳物业费...【阅读全文】
+																</a>
+														</div>
+
+												</div>
+
+										</div>
+
+										<div class="row news_item">
+
+												<div class="hb_ct_1">
+
+														<div class="news_title col-xs-8 col-md-10">
+																<a title="社区APP开发打破传统，助居民开启智能化生活">
+																		社区APP开发打破传统，助居民开启智能化生活
+																</a>
+														</div>
+
+														<em class="col-xs-4 col-md-2">2016-11-17 </em>
+
+												</div>
+
+												<div class="hb_ct_2 row news_info">
+
+														<div class="col-xs-12 col-md-4">
+																<a>
+																		<img src="http://www.ifenguo.com/uploads/allimg/161117/6-16111GH155253-lp.jpg"
+																				 alt="社区APP开发打破传统，助居民开启智能化生活">
+																</a>
+														</div>
+
+														<div class="hb_y col-xs-12 col-md-8 news_intro">
+																<a>
+																		社区APP开发，是一款让社区服务更加便捷、更加人性化的手机APP软件。
+																		用户只需下载社区APP客户端，就可以通过互联网功能便利化生活，
+																		比如网上订餐，网上购买水果，在线缴纳物业费...【阅读全文】
+																</a>
+														</div>
+
+												</div>
+
+										</div>
+
+										<div class="row news_item">
+
+												<div class="hb_ct_1">
+
+														<div class="news_title col-xs-8 col-md-10">
+																<a title="社区APP开发打破传统，助居民开启智能化生活">
+																		社区APP开发打破传统，助居民开启智能化生活
+																</a>
+														</div>
+
+														<em class="col-xs-4 col-md-2">2016-11-17 </em>
+
+												</div>
+
+												<div class="hb_ct_2 row news_info">
+
+														<div class="col-xs-12 col-md-4">
+																<a>
+																		<img src="http://www.ifenguo.com/uploads/allimg/161117/6-16111GH155253-lp.jpg"
+																				 alt="社区APP开发打破传统，助居民开启智能化生活">
+																</a>
+														</div>
+
+														<div class="hb_y col-xs-12 col-md-8 news_intro">
+																<a>
+																		社区APP开发，是一款让社区服务更加便捷、更加人性化的手机APP软件。
+																		用户只需下载社区APP客户端，就可以通过互联网功能便利化生活，
+																		比如网上订餐，网上购买水果，在线缴纳物业费...【阅读全文】
+																</a>
+														</div>
+
+												</div>
+
+										</div>
+
+
+
+								</div>
+
+								<div class="pager_container news_pages">
+										<ul class="pagenation" style="float:right;"></ul>
+								</div>
+
+
+						</div>
+
+						<div class="hb_right col-md-4 hidden-xs">
+
+								<div class="hb_f1">
+
+										<div class="txt">近期热文</div>
+
+										<ul class="last_news">
+
+												<li>
+														<em>
+																<img src="../image/news/hb_5.jpg" alt="近期热文">
+														</em>
+
+														<a title="粉果科技谈如何树立深圳APP外包行">
+																粉果科技谈如何树立深圳APP外包行
+														</a>
+												</li>
+
+												<li>
+														<em>
+																<img src="../image/news/hb_5.jpg" alt="近期热文">
+														</em>
+
+														<a title="粉果科技谈如何树立深圳APP外包行">
+																粉果科技谈如何树立深圳APP外包行
+														</a>
+												</li>
+
+												<li>
+														<em>
+																<img src="../image/news/hb_5.jpg" alt="近期热文">
+														</em>
+
+														<a title="粉果科技谈如何树立深圳APP外包行">
+																粉果科技谈如何树立深圳APP外包行
+														</a>
+												</li>
+
+												<li>
+														<em>
+																<img src="../image/news/hb_5.jpg" alt="近期热文">
+														</em>
+
+														<a title="粉果科技谈如何树立深圳APP外包行">
+																粉果科技谈如何树立深圳APP外包行
+														</a>
+												</li>
+
+												<li>
+														<em>
+																<img src="../image/news/hb_5.jpg" alt="近期热文">
+														</em>
+
+														<a title="粉果科技谈如何树立深圳APP外包行">
+																粉果科技谈如何树立深圳APP外包行
+														</a>
+												</li>
+
+										</ul>
+
+								</div>
+
+						</div>
+
+				</div>
+
+		</div>
+
+</div>
+
+<!-- 在线留言 -->
+<div class="copy">
+
+		<div class="box col-xs-12">
+
+				<div class="left col-xs-12 col-md-8">
+
+						<div class="col-xs-2 col-md-1">
+								<div class="txt">在线留言</div>
+						</div>
+
+						<div class="col-xs-10 col-md-11 input_info">
+
+								<div class="row">
+
+										<div class="col-xs-6">
+												<input type="text" class="form-control user_name" placeholder="您的姓名"/>
+												<font color="red">*</font>
+										</div>
+
+										<div class="col-xs-6">
+												<input type="text" class="form-control corp_name" placeholder="单位名称"/>
+												<font color="red">*</font>
+										</div>
+
+								</div>
+
+								<div class="row">
+
+										<div class="col-xs-6">
+												<input type="text" class="form-control user_email" placeholder="E-mail"/>
+												<font color="red">*</font>
+										</div>
+
+										<div class="col-xs-6">
+												<input type="text" class="form-control user_phone" placeholder="联系电话"/>
+												<font color="red">*</font>
+										</div>
+
+								</div>
+
+								<div class="row">
+										<div class="col-xs-12">
+												<textarea rows="" cols="" class="form-control remark" placeholder="留言内容"></textarea>
+										</div>
+								</div>
+
+								<div class="row">
+
+										<div class="col-xs-12">
+
+												<div class="col-xs-3 btn btn-success btn_submit">提交</div>
+
+												<span class="col-xs-9 txt1 hidden-xs">
+														我们会尽快回复您，您的资料会被保密处理。
+												</span>
+
+										</div>
+
+								</div>
+
+						</div>
+
+				</div>
+
+				<div class="right col-md-4 hidden-xs">
+
+						<div class="col-xs-6 item">
+
+								<div class="name">
+										客服热线
+								</div>
+
+								<div class="img">
+										<img src="../image/weixin.gif" border="0"/>
+								</div>
+
+								<div class="txt">
+										028-123343324
+								</div>
+
+						</div>
+
+						<div class="col-xs-6 item">
+
+								<div class="name">
+										客服热线
+								</div>
+
+								<div class="img">
+										<img src="../image/weixin.gif" border="0"/>
+								</div>
+
+								<div class="txt">
+										028-123343324
+								</div>
+
+						</div>
+
+						<div class="col-xs-6 item">
+
+								<div class="name">
+										客服热线
+								</div>
+
+								<div class="img">
+										<img src="../image/weixin.gif" border="0"/>
+								</div>
+
+								<div class="txt">
+										028-123343324
+								</div>
+
+						</div>
+
+						<div class="col-xs-6 item">
+
+								<div class="name">
+										客服热线
+								</div>
+
+								<div class="img">
+										<img src="../image/weixin.gif" border="0"/>
+								</div>
+
+								<div class="txt">
+										028-123343324
+								</div>
+
+						</div>
+
+				</div>
+
+		</div>
+
+		<div class="col-xs-12 show_txt" style="margin-top: 30px">
+
+				客服：0512-88888888
+				任先生：11111111111
+				地址：苏州腾飞创业园
+
+		</div>
+
+		<div class="col-xs-12 show_txt">
+
+				Copyright &copy; 2011-2016 深圳粉果科技有限公司 版权所有
+				粤ICP备16007687号-1
+
+		</div>
+
+</div>
+<!-- 在线留言 结束 -->
+
+</body>
+</html>

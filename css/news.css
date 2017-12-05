@@ -1,0 +1,250 @@
+
+.banner {
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+}
+
+.banner img {
+	width: 100%;
+	height: 100%;
+}
+
+.hb_inf {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.hb_dw {
+	width: 100%;
+	float: left;
+}
+
+.hb_dw_1 {
+	width: 100%;
+	float: left;
+	margin-top: 15px;
+	border-bottom: 1px solid #cccccc;
+	padding: 8px 0;
+}
+
+.hb_dw_1 a {
+	margin-right: 30px;
+	margin-bottom: 8px;
+}
+
+.hb_dw_1 a:hover {
+	color: white;
+	background-color: #0BB20C;
+}
+
+.hb_dw_1 a.selected {
+	background-color: #0BB20C;
+	color: #fff;
+}
+
+.hb_dw_1 a.selected:hover {
+	color: white;
+}
+
+.hb_dw_2 {
+	width: 100%;
+	/*padding:0;*/
+	padding-bottom: 30px;
+}
+
+.hb_dw_2 .hb_ct {
+	margin-top: 12px;
+}
+
+.hb_dw_2 .hb_ct .news_list {
+	width: 100%;
+	position: relative;
+}
+
+.hb_dw_2 .hb_ct .news_list > .row {
+	margin-top: 20px;
+	border-bottom: 1px dashed #dcdcdc;
+	padding-bottom: 20px;
+}
+
+.hb_dw_2 .hb_ct .news_list .row .hb_ct_1 {
+	width: 100%;
+	float: left;
+	margin-bottom: 22px;
+}
+
+.hb_dw_2 .hb_ct .news_list .row .hb_ct_1 .news_title {
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 0;
+}
+
+.hb_dw_2 .hb_ct .news_list .row .hb_ct_1 .news_title a {
+	color: #555555;
+}
+
+.hb_dw_2 .hb_ct .news_list .row .hb_ct_1 .news_title a:hover {
+	color: #34aadc;
+}
+
+.hb_dw_2 .hb_ct .news_list .row .hb_ct_1 em {
+	/*float: right;*/
+	padding: 10px 0 0;
+	font-style: normal;
+	text-align: right;
+}
+
+.hb_dw_2 .hb_ct .news_list .row .hb_ct_2 {
+	width: 100%;
+	float: left;
+
+}
+
+.hb_dw_2 .hb_ct .news_list .row .hb_ct_2 a {
+	overflow: hidden;
+	display: block;
+	width: 100%;
+}
+
+.hb_dw_2 .hb_ct .news_list .row .hb_ct_2 a img {
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #dbdbdb;
+	transition: all 1s;
+	-moz-transition: all 1s; /* Firefox 4 */
+	-webkit-transition: all 1s; /* Safari 和 Chrome */
+	-o-transition: all 1s; /* Opera */
+	overflow: hidden;
+}
+
+.hb_dw_2 .hb_ct .news_list .row .hb_ct_2 a:hover img {
+	transform: scale(1.1, 1.1);
+}
+
+.hb_dw_2 .hb_ct .news_list .row .hb_ct_2 .hb_y a {
+	font-size: 13px;
+	cursor: pointer;
+}
+
+.hb_dw_2 .hb_right {
+	/*width: 100%;*/
+	margin-top: 20px;
+	padding-right: 0;
+}
+
+.hb_dw_2 .hb_right .hb_f1 {
+	width: 100%;
+	max-width: 220px;
+	/*margin: 0 auto;*/
+	border: 1px solid #e5e5e5;
+	border-radius: 5px;
+	float: right;
+}
+
+.hb_dw_2 .hb_right .hb_f1 .txt {
+	background: url(../image/news/hb_12.jpg) repeat-x;
+	width: 100%;
+	height: 31px;
+	text-align: center;
+	line-height: 31px;
+	font-size: 14px;
+}
+
+.hb_dw_2 .hb_right ul {
+	padding: 0 10px;
+}
+
+.hb_dw_2 .hb_right ul li {
+	width: 100%;
+	height: 36px;
+	line-height: 36px;
+	/*float: left;*/
+	/*margin-left: 10px;*/
+	/*padding-left: 10px;*/
+	overflow: hidden;
+	border-bottom: 1px solid #e3e3e3;
+	display: -webkit-box;
+}
+
+.hb_dw_2 .hb_right ul li em {
+	margin-right: 5px;
+}
+
+.hb_dw_2 .hb_right ul li a {
+	color: #333333;
+	display: block;
+	width: 80%;
+	cursor: pointer;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	overflow: hidden; /* 超出部分不显示 */
+}
+
+.hb_dw_2 .hb_right ul li a:hover {
+	color: #34aadc;
+
+}
+
+/*新闻详情*/
+.news_detail {
+}
+
+.news_detail .title {
+	width: 100%;
+	color: #2c2c2c;
+	font-size: 18px;
+	padding: 10px 0 30px;
+	text-align: center;
+}
+
+.news_detail .info {
+	width: 100%;
+	color: #696969;
+	background-color: #f2f2f2;
+	border-bottom: 1px solid #e6e6e6;
+	line-height: 36px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.news_detail .content {
+	width: 100%;
+}
+
+.news_detail .content img {
+	width: 80%;
+	margin: 10px 10% 20px;
+}
+
+@media (max-width: 767px) {
+	.hb_inf {
+		width: 96%;
+	}
+
+	.hb_dw_1 a {
+		margin-right: 5px;
+	}
+
+	.hb_dw_2 .hb_ct .news_list .row .hb_ct_1 .news_title {
+		font-size: 16px;
+	}
+
+	.hb_dw_2 .hb_ct .news_list .row .hb_ct_1 em {
+		font-size: 12px;
+	}
+
+	.hb_dw_2 .hb_ct .news_list .row .news_info {
+		margin: 0;
+	}
+
+	.hb_dw_2 .hb_ct .news_list .row .news_info .news_intro {
+		margin-top: 15px;
+	}
+
+	.hb_dw_2 .hb_ct .news_list .row .news_info > div {
+		padding: 0
+	}
+}

@@ -1,0 +1,76 @@
+
+.solution_container {
+	clear: both;
+}
+
+.jj_p {
+	text-align: center;
+	margin: 20px auto;
+	font-size: 14px;
+	width: 80%;
+	line-height: 25px;
+	/*padding-bottom: 60px;*/
+}
+
+.jjfa {
+	/*width: 1020px;*/
+	/*margin: 0px auto;*/
+}
+
+.jjfa .list {
+	/*float: left;*/
+	/*width: 338px;*/
+	margin-top: 40px;
+	text-align: center;
+}
+
+.jjfa .list .tbj1, .tbj2, .tbj3, .tbj4, .tbj5, .tbj6 {
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+	-webkit-transition: -webkit-transform 1s ease-out;
+	-moz-transition: -moz-transform 1s ease-out;
+	-ms-transition: -ms-transform 1s ease-out;
+	-o-transition: -o-transform 1s ease-out;
+	transition: transform 1s ease-out;
+}
+
+.jjfa .list .tbj1:hover, .tbj2:hover, .tbj3:hover, .tbj4:hover, .tbj5:hover, .tbj6:hover {
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+	-webkit-transform: scale(1.1) rotate(360deg); /* safari and chrome */
+	-moz-transform: scale(1.1) rotate(360deg); /* firefox */
+	-o-transform: scale(1.1) rotate(360deg); /* opera */
+	-ms-transform: scale(1.1) rotate(360deg); /* ie9 */
+	transform: scale(1.1) rotate(360deg);
+}
+
+.jjfa .list .title {
+	/*font-family: "\5FAE\8F6F\96C5\9ED1", \9ED1\4F53;*/
+	font-size: 16px;
+	height: 50px;
+	line-height: 50px;
+	font-weight: bold;
+}
+
+.jjfa .list .title a {
+	color: #333;
+}
+
+.jjfa .list .title a:hover {
+	color: #34aadc;
+	text-decoration: none;
+}
+
+.jjfa .list .jieshao {
+	width: 100%;
+	/*float: left;*/
+	/*font-family: '宋体';*/
+	font-size: 14px;
+	/*line-height: 180%;*/
+	/*margin-left: 50px;*/
+	text-align: center;
+}
+
+
